@@ -20,9 +20,32 @@ Color pallettes
     background-color: #4CAF50;
 }
 
+.accent-green {
+    background-color: #8BC34A;
+}
+
+.text-accent-green {
+    color: #8BC34A;
+}
+
 /*
 top navbar styling
 */
 .search-bar{
     width: 15%;
 }
+
+.abs-center-x {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.font-lobster {
+    font-family: 'Lobster';
+}
+
+.btn:hover {
+    background-color: #72db75;
+}
+
