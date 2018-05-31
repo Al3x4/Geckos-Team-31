@@ -5,15 +5,63 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Geckos 31</title>
-  <!--links to bootstrap css file and local css files-->
+  <!--links to bootstrap css file, font awesome and local css files-->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet"> 
   <link rel="stylesheet" type="text/css" href="styles/main.css">
+
 </head>
 
 <body>
 
-  
+  <!--navbar row start-->
+  <div class="row navbar-row">
+    <div class="col navbar-col">
+      <!--navbar start-->
 
+      <div class="navbar dark-green d-flex">
+        <!--boards button-->
+        <button class="btn nav-btn primary-green mr-2">
+          <a href="#"><i class="fab fa-trello text-white font-weight-bold">  Boards</i></a>
+        </button>
+        <!--search bar with icon-->
+        <div class="search-bar input-group mr-auto">
+          <input type="text" class="form-control search-input border-0 primary-green" placeholder="" aria-label="Search" aria-describedby="basic-addon2">
+          <div class="input-group-append">
+            <button class="btn search-btn nav-btn primary-green">
+              <i class="fa fa-search text-white"></i>
+            </button>
+          </div>
+        </div>
+        <!--Logo-->
+
+        <span class="navbar-text logo text-white font-lobster abs-center-x">
+          <h3><i class="fab fa-trello"></i> Paste-It</h3>
+        </span>
+        <!--right buttons div-->
+        <div class="ml-auto">
+          <button class="btn nav-btn primary-green ml-auto">
+            <i class="fas fa-plus text-white"></i>              
+          </button>
+          <button class="btn nav-btn primary-green ml-auto">
+            <i class="fas fa-info-circle text-white"></i>
+          </button>
+          <button class="btn nav-btn primary-green ml-auto">
+            <i class="far fa-bell text-white"></i>
+          </button>     
+        </div>
+
+      </div>
+      <!--navbar end-->
+
+    </div>
+  <!--navbar row end-->
+  </div>
+
+  
+  
   <!-- JS dependencies for Bootstrap 4 and reference to local JS file-->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>

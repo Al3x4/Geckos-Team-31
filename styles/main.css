@@ -1,3 +1,96 @@
+
 /*
 I added bootstrap for the browser reset features. (remove margins padding etc). It doesnt have to stay so if you guys see that it hinders you, it can come out. 
 */
+
+/*
+General styling for major elements
+*/
+body {
+    font-family: "Roboto", sans-serif;
+}
+
+/*
+Color pallettes
+*/
+.dark-green {
+    background-color: #388E3C;
+}
+
+.primary-green{
+    background-color: #4CAF50;
+}
+
+.accent-green {
+    background-color: #8BC34A;
+}
+
+.text-accent-green {
+    color: #8BC34A;
+}
+
+/*
+top navbar styling
+*/
+
+.search-bar{
+    width: 150px;
+}
+
+
+.abs-center-x {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.font-lobster {
+    font-family: 'Lobster';
+}
+
+.btn:hover {
+    background-color: #72db75;
+}
+
+.nav-btn:active {
+    background-color: #388E3C;
+}
+
+.search-input:hover {
+    background-color: #72db75;
+}
+
+.search-input:focus {
+    background-color: #fff;
+}
+
+
+/*
+media query for screens under 750px
+*/
+@media only screen and (max-width: 750px) {
+
+    .logo{
+        display: none;
+    }
+
+}
+
+/*
+media query for small screens under 450px
+*/
+@media only screen and (max-width: 450px) {
+
+    .btn{
+        padding: 8px;
+    }
+
+    .search-bar{
+        width: 30px;
+    }
+
+    .search-input {
+        display: none;
+    }
+
+}
