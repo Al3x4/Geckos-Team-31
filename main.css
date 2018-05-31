@@ -31,9 +31,11 @@ Color pallettes
 /*
 top navbar styling
 */
+
 .search-bar{
-    width: 15%;
+    width: 150px;
 }
+
 
 .abs-center-x {
     position: absolute;
@@ -49,3 +51,45 @@ top navbar styling
     background-color: #72db75;
 }
 
+.nav-btn:active {
+    background-color: #388E3C;
+}
+
+.search-input:hover {
+    background-color: #72db75;
+}
+
+.search-input:focus {
+    background-color: #fff;
+}
+
+
+/*
+media query for screens under 750px
+*/
+@media only screen and (max-width: 750px) {
+
+    .logo{
+        display: none;
+    }
+
+}
+
+/*
+media query for small screens under 450px
+*/
+@media only screen and (max-width: 450px) {
+
+    .btn{
+        padding: 8px;
+    }
+
+    .search-bar{
+        width: 30px;
+    }
+
+    .search-input {
+        display: none;
+    }
+
+}
