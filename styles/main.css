@@ -1,3 +1,6 @@
 /*
 I added bootstrap for the browser reset features. (remove margins padding etc). It doesnt have to stay so if you guys see that it hinders you, it can come out. 
 */
+body{
+    margin: 0;
+}
