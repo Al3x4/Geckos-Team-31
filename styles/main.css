@@ -65,6 +65,22 @@ top navbar styling
     background-color: #fff;
 }
 
+/*
+Secondary nav styles--BEGIN
+*/
+
+.secondary-nav h2 {
+    font-family: Helvetica, sans-serif;
+    font-size: 18px;
+}
+
+.dark-green-hover:hover {
+    background: #388E3C ;
+}
+
+/*
+Secondary nav styles--END
+*/
 
 /*
 media query for screens under 750px
