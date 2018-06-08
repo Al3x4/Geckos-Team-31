@@ -83,6 +83,20 @@ Secondary nav styles--END
 */
 
 /*
+Main body styling--BEGIN
+*/
+
+.main-body {
+    height: calc(100vh - 120px);
+    min-width: 100vw;
+    overflow: auto;
+}
+
+/*
+Main body styling--END
+*/
+
+/*
 media query for screens under 750px
 */
 @media only screen and (max-width: 750px) {
