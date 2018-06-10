@@ -23,20 +23,24 @@ body {
 /*
 Color pallettes
 */
-.dark-green {
+.dark {
     background-color: #388E3C;
 }
 
-.primary-green{
+.primary{
     background-color: #4CAF50;
 }
 
-.accent-green {
+.accent {
     background-color: #8BC34A;
 }
 
-.text-accent-green {
+.text-accent {
     color: #8BC34A;
+}
+
+.dark-hover:hover {
+    background: #388E3C ;
 }
 
 /*
@@ -83,9 +87,6 @@ Secondary nav styles--BEGIN
     font-size: 18px;
 }
 
-.dark-green-hover:hover {
-    background: #388E3C ;
-}
 
 /*
 Secondary nav styles--END
