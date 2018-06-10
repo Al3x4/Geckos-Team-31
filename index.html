@@ -22,7 +22,7 @@
     
     <!----------------------------------------------------------navbar row BEGIN-->
     <div class="row navbar-row">
-      <div class="col navbar-col padding-sides-0">
+      <div class="col navbar-col px-0">
         <div class="navbar dark d-flex">
           <!--boards button-->
           <button class="btn nav-btn primary mr-2">
@@ -60,7 +60,7 @@
 
     <!---------------------------------------------- secondary nav section BEGIN-->
     <div class="row navbar-row secondary-nav">
-      <div class="col navbar-col padding-sides-0">
+      <div class="col navbar-col px-0">
 
         <div class="navbar primary d-flex">
           <!--Team name-->
@@ -86,19 +86,19 @@
 
     <!-- -----------------------------------------------------sidebar - BEGIN -->
     <nav id="sidebar" class="float-right invisible">
-      <div class="card rounded-0" style="width: 18rem;">
+      <div class="card rounded-0">
         <ul class="list-group list-group-flush">
           <li class="list-group-item"><h2 class="d-inline-block position-relative" >Menu</h2><span  id="close-menu" class="float-right position-absolute">&times;</span></li>
-          <li class="list-group-item">Change background color</li>
-          <li class="list-group-item">
+          <li class="list-group-item" id="change-colors">Change background color</li>
+          <li class="list-group-item" id="swatches">
             <div class="container">
               <div class="row">
-                <div class="col-sm 6"></div>
-                <div class="col-sm 6"></div>
-                <div class="col-sm 6"></div>
-                <div class="col-sm 6"></div>
-                <div class="col-sm 6"></div>
-                <div class="col-sm 6"></div>
+                <div class="col-sm-5 choose-color m-1 rounded" id="blue">color</div>
+                <div class="col-sm-5 choose-color m-1 rounded" id="orange">color</div>
+                <div class="col-sm-5 choose-color m-1 rounded" id="green">color</div>
+                <div class="col-sm-5 choose-color m-1 rounded" id="red">color</div>
+                <div class="col-sm-5 choose-color m-1 rounded" id="purple">color</div>
+                <div class="col-sm-5 choose-color m-1 rounded" id="pink">color</div>
               </div>
             </div>
           </li>

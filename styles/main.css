@@ -12,13 +12,6 @@ body {
 }
 
 
-/*removing this class makes the top nav have some left and right padding*/
-.padding-sides-0 {
-    padding-left: 0;
-    padding-right: 0;
-} 
-
-
 
 /*
 Color pallettes
@@ -132,7 +125,11 @@ Sidebar drawer menu--BEGIN
     cursor: pointer;
 }
 
+#sidebar .choose-color {
+    height: 100px;
+    background: red;
 
+}
 
 
 
