@@ -11,6 +11,15 @@ body {
     margin: 0;
 }
 
+
+/*removing this class makes the top nav have some left and right padding*/
+.padding-sides-0 {
+    padding-left: 0;
+    padding-right: 0;
+} 
+
+
+
 /*
 Color pallettes
 */
@@ -87,13 +96,47 @@ Main body styling--BEGIN
 */
 
 .main-body {
-    height: calc(100vh - 120px);
+    height: 100vh;
     min-width: 100vw;
     overflow: auto;
 }
 
 /*
 Main body styling--END
+*/
+
+
+/*
+Sidebar drawer menu--BEGIN
+*/
+#sidebar {
+    background: #ffffff;
+    transition-delay: 300ms;
+    max-width: 300px;
+    height: calc(100% - 55px);
+    margin-right: -15px;
+    margin-top: -55px;
+}
+
+#sidebar h2 {
+    font-family: Helvetica, sans-serif;
+    font-size: 18px;
+    text-align: center;
+    width: 100%;
+    margin: 0;
+}
+
+#sidebar #close-menu:hover {
+    color: gray;
+    cursor: pointer;
+}
+
+
+
+
+
+/*
+Sidebar drawer menu--END
 */
 
 /*

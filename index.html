@@ -17,10 +17,12 @@
 </head>
 
 <body>
-  <!--navbar row start-->
-  <div class="row navbar-row">
-      <div class="col navbar-col">
 
+  <div class="container-fluid primary-green main-body">
+    
+    <!----------------------------------------------------------navbar row BEGIN-->
+    <div class="row navbar-row">
+      <div class="col navbar-col padding-sides-0">
         <div class="navbar dark-green d-flex">
           <!--boards button-->
           <button class="btn nav-btn primary-green mr-2">
@@ -36,7 +38,6 @@
             </div>
           </div>
           <!--Logo-->
-
           <span class="navbar-text logo text-white font-lobster abs-center-x">
             <h3><i class="fab fa-trello"></i> Paste-It</h3>
           </span>
@@ -52,18 +53,15 @@
               <i class="far fa-bell text-white"></i>
             </button>
           </div>
-
         </div>
-        
       </div>
     </div>
-  <!--navbar section end-->
+    <!--------------------------------------------------------navbar section END-->
 
+    <!---------------------------------------------- secondary nav section BEGIN-->
+    <div class="row navbar-row secondary-nav">
+      <div class="col navbar-col padding-sides-0">
 
-  <!-- secondary nav section BEGIN-->
-  <div class="row navbar-row secondary-nav">
-      <div class="col navbar-col">
-  
         <div class="navbar primary-green d-flex">
           <!--Team name-->
           <h2 class="text-white align-middle mb-0"> Trello Clone Project</h2>
@@ -77,26 +75,55 @@
 
           <!--display-menu-->
           <div class="ml-auto">
-            <span class="text-white align-middle p-2 mb-0 dark-green-hover rounded">... <u>Show Menu</u></span>
+            <span id="show-menu" class="text-white align-middle p-2 mb-0 dark-green-hover rounded">... <u>Show Menu</u></span>
           </div>
-  
+
         </div>
-  
+
       </div>
     </div>
-<!-- secondary nav section END -->
+    <!--------------------------------------------- secondary nav section BEGIN -->
 
-<!--main body start-->
-  <div class="container-fluid d-flex main-body primary-green">
+    <!-- -----------------------------------------------------sidebar - BEGIN -->
+    <nav id="sidebar" class="float-right invisible">
+      <div class="card rounded-0" style="width: 18rem;">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item"><h2 class="d-inline-block position-relative" >Menu</h2><span  id="close-menu" class="float-right position-absolute">&times;</span></li>
+          <li class="list-group-item">Change background color</li>
+          <li class="list-group-item">
+            <div class="container">
+              <div class="row">
+                <div class="col-sm 6"></div>
+                <div class="col-sm 6"></div>
+                <div class="col-sm 6"></div>
+                <div class="col-sm 6"></div>
+                <div class="col-sm 6"></div>
+                <div class="col-sm 6"></div>
+              </div>
+            </div>
+          </li>
+          <li class="list-group-item">Filter boards</li>
+        </ul>
+      </div>
+    </nav>
+    <!----------------------------------------------------------sidebar - END -->
 
-    <div class="row">
-      
-    </div>
+    <!---------------------------------------------------------------------------- Main body BEGIN -->
+    <div class="row"> 
+
+      <!-----------------------------------------------main boards area - BEGIN -->
+      <main class="col">
+
+        <div>This is where the cards go</div>
+
+      </main>
+      <!-------------------------------------------------main boards area - END -->
 
   </div>
-<!--main body end-->
 
-<!--@mgrienauer create button onclick-->
+
+
+  <!--@mgrienauer create button onclick-->
   <div class="modal fade" id="create-modal">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -132,16 +159,16 @@
       </div>
     </div>
   </div>
-<!--end of create button onclick modal-->
+  <!--end of create button onclick modal-->
 
 
   <!-- JS dependencies for Bootstrap 4 and reference to local JS file-->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
+  crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-    crossorigin="anonymous"></script>
+  crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
-    crossorigin="anonymous"></script>
+  crossorigin="anonymous"></script>
   <script type="text/javascript" src="js/main.js"></script>
 
 </body>
