@@ -132,9 +132,18 @@ Sidebar drawer menu--BEGIN
 }
 
 
-
 /*
 Sidebar drawer menu--END
+*/
+
+/*
+Rename onlick start
+*/
+#rename {
+    z-index: 1;
+}
+/*
+Rename onclick end
 */
 
 /*
