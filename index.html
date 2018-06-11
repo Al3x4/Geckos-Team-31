@@ -18,7 +18,7 @@
 
 <body>
 
-  <div class="container-fluid primary main-body">
+  <div class="container-fluid primary main-body" id="main-body">
     
     <!----------------------------------------------------------navbar row BEGIN-->
     <div class="row navbar-row">
@@ -64,7 +64,9 @@
 
         <div class="navbar primary d-flex">
           <!--Team name-->
-          <h2 class="text-white align-middle mb-0"> Trello Clone Project</h2>
+          <button class="btn nav-btn primary dark-hover text-white mx-1" id="open-rename">
+            <h2 class="align-middle mb-0" id="board-name"> Trello Clone Project</h2>
+          </button>
           <button class="btn nav-btn primary dark-hover text-white">
             <i class="fa fa-star-o"> </i>
           </button>
@@ -107,6 +109,22 @@
       </div>
     </nav>
     <!----------------------------------------------------------sidebar - END -->
+
+    <!----------------------------------------------------------rename onclick - START -->
+    <div class="card rounded-0 float-left position-absolute invisible" id="rename">
+      <h5 class="card-header">Rename Board
+        <button type="button" class="close" aria-label="Close" id="close-rename">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </h5>
+      <div class="card-body">
+        <h6 class="card-title">Name</h5>
+        <input type="text" class="mb-2" id="rename-input" aria-describedby="renameBoard" placeholder=""><br>
+        <a href="#" class="btn dark text-white" id="rename-btn">Rename</a>
+      </div>
+    </div>
+    <!----------------------------------------------------------rename onclick - END -->
+
 
     <!---------------------------------------------------------------------------- Main body BEGIN -->
     <div class="row"> 
