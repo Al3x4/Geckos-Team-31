@@ -11,23 +11,29 @@ body {
     margin: 0;
 }
 
+
+
 /*
 Color pallettes
 */
-.dark-green {
+.dark {
     background-color: #388E3C;
 }
 
-.primary-green{
+.primary{
     background-color: #4CAF50;
 }
 
-.accent-green {
+.accent {
     background-color: #8BC34A;
 }
 
-.text-accent-green {
+.text-accent {
     color: #8BC34A;
+}
+
+.dark-hover:hover {
+    background: #388E3C ;
 }
 
 /*
@@ -74,9 +80,6 @@ Secondary nav styles--BEGIN
     font-size: 18px;
 }
 
-.dark-green-hover:hover {
-    background: #388E3C ;
-}
 
 /*
 Secondary nav styles--END
@@ -87,13 +90,51 @@ Main body styling--BEGIN
 */
 
 .main-body {
-    height: calc(100vh - 120px);
+    height: 100vh;
     min-width: 100vw;
     overflow: auto;
 }
 
 /*
 Main body styling--END
+*/
+
+
+/*
+Sidebar drawer menu--BEGIN
+*/
+#sidebar {
+    background: #ffffff;
+    transition-delay: 300ms;
+    max-width: 300px;
+    height: calc(100% - 55px);
+    margin-right: -15px;
+    margin-top: -55px;
+}
+
+#sidebar h2 {
+    font-family: Helvetica, sans-serif;
+    font-size: 18px;
+    text-align: center;
+    width: 100%;
+    margin: 0;
+}
+
+#sidebar #close-menu:hover {
+    color: gray;
+    cursor: pointer;
+}
+
+#sidebar .choose-color {
+    height: 100px;
+    background: red;
+
+}
+
+
+
+/*
+Sidebar drawer menu--END
 */
 
 /*
