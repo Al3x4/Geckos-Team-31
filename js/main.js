@@ -24,8 +24,40 @@ let sidebar = {
 	// 	}
 		
 	// }
-}
+};
 
+//create a rename object with function to rename board and make rename card appear
+let rename = {
+
+	init : function(){
+		let openRename 	= $('#open-rename'),
+			closeRename = $('#close-rename'),
+			renameCard 	= $('#rename'),
+			renameBtn 	= $('#rename-btn');
+
+		openRename.on('click', function(){
+			renameCard.removeClass('invisible');
+		});
+
+		closeRename.on('click', function(){
+			renameCard.addClass('invisible');
+		});
+
+		//update board name, hide rename card, and clear input on rename-btn click
+		renameBtn.on('click', function(){
+			let newName		= $('#rename-input'),
+				boardName	= $('#board-name');
+
+			//only perform tasks if value isn't empty
+			if (newName.val() !== ''){
+				boardName.text(newName.val());
+				newName.val('');
+				renameCard.addClass('invisible');
+			}
+		});
+	}
+
+};
 
 
 
@@ -64,5 +96,6 @@ let sidebar = {
 
 
 sidebar.init();
+rename.init();
 
-}
+};
