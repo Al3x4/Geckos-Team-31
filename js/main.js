@@ -92,10 +92,13 @@ let rename = {
 // 		primary : 'cd5a91'
 // 		accent : 
 // 	}, 
+// document.documentElement.style.setProperty('--dark', 'yellow');
 
 
 
 sidebar.init();
 rename.init();
+
+
 
 };

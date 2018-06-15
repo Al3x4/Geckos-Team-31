@@ -10,30 +10,37 @@ body {
     font-family: "Roboto", sans-serif;
     margin: 0;
 }
-
+/*DEFINE COLOR VARIABLES*/
+:root {
+    --dark: #388E3C;
+    --primary: #4CAF50;
+    --secondary: #72db75; /* used for input hovers. Named secondary for lack of a better idea*/
+    --accent: #8BC34A;
+    
+}
 
 
 /*
 Color pallettes
 */
 .dark {
-    background-color: #388E3C;
+    background-color: var(--dark);
 }
 
 .primary{
-    background-color: #4CAF50;
+    background-color: var(--primary);
 }
 
 .accent {
-    background-color: #8BC34A;
+    background-color: var(--accent);
 }
 
 .text-accent {
-    color: #8BC34A;
+    color: var(--accent);
 }
 
 .dark-hover:hover {
-    background: #388E3C ;
+    background: var(--dark) ;
 }
 
 /*
@@ -56,15 +63,15 @@ top navbar styling
 }
 
 .btn:hover {
-    background-color: #72db75;
+    background-color: var(--secondary);
 }
 
 .nav-btn:active {
-    background-color: #388E3C;
+    background-color: var(--dark);
 }
 
 .search-input:hover {
-    background-color: #72db75;
+    background-color: var(--secondary);
 }
 
 .search-input:focus {
@@ -80,6 +87,9 @@ Secondary nav styles--BEGIN
     font-size: 18px;
 }
 
+#show-menu:hover {
+    cursor: pointer;
+}
 
 /*
 Secondary nav styles--END
