@@ -9,25 +9,39 @@ General styling for major elements
 body {
     font-family: "Roboto", sans-serif;
     margin: 0;
+    transition: all 300ms;
 }
+/*DEFINE COLOR VARIABLES*/
+:root {
+    --dark: #388E3C;
+    --primary: #4CAF50;
+    --secondary: #72db75; /* used for input hovers. Named secondary for lack of a better idea*/
+    --accent: #8BC34A;
+    
+}
+
 
 /*
 Color pallettes
 */
-.dark-green {
-    background-color: #388E3C;
+.dark {
+    background-color: var(--dark);
 }
 
-.primary-green{
-    background-color: #4CAF50;
+.primary{
+    background-color: var(--primary);
 }
 
-.accent-green {
-    background-color: #8BC34A;
+.accent {
+    background-color: var(--accent);
 }
 
-.text-accent-green {
-    color: #8BC34A;
+.text-accent {
+    color: var(--accent);
+}
+
+.dark-hover:hover {
+    background: var(--dark) ;
 }
 
 /*
@@ -50,15 +64,15 @@ top navbar styling
 }
 
 .btn:hover {
-    background-color: #72db75;
+    background-color: var(--secondary);
 }
 
 .nav-btn:active {
-    background-color: #388E3C;
+    background-color: var(--dark);
 }
 
 .search-input:hover {
-    background-color: #72db75;
+    background-color: var(--secondary);
 }
 
 .search-input:focus {
@@ -74,8 +88,8 @@ Secondary nav styles--BEGIN
     font-size: 18px;
 }
 
-.dark-green-hover:hover {
-    background: #388E3C ;
+#show-menu:hover {
+    cursor: pointer;
 }
 
 /*
@@ -87,13 +101,89 @@ Main body styling--BEGIN
 */
 
 .main-body {
-    height: calc(100vh - 120px);
+    height: 100vh;
     min-width: 100vw;
     overflow: auto;
 }
 
 /*
 Main body styling--END
+*/
+
+
+/*
+Sidebar drawer menu--BEGIN
+*/
+#sidebar {
+    background: #ffffff;
+    transition: 300ms;
+    overflow: hidden;
+    height: calc(100% - 55px);
+    margin-right: -15px;
+    margin-top: -55px;
+}
+.keep-width {
+    width: 300px;
+}
+
+.closed {
+    width: 0;
+    height: 0;
+    padding: 0;
+    overflow: hidden;
+    border: none;
+}
+
+.open {
+    width: 300px;  
+}
+
+#sidebar h2 {
+    font-family: Helvetica, sans-serif;
+    font-size: 18px;
+    text-align: center;
+    width: 100%;
+    margin: 0;
+}
+
+#sidebar #close-menu:hover {
+    color: gray;
+    cursor: pointer;
+}
+
+#sidebar .choose-color {
+    height: 100px;
+
+}
+
+#sidebar .choose-color:hover {
+    opacity: 0.8;
+}
+
+#sidebar .list-group-item:hover > span {
+    opacity: 0.8;
+}
+
+#sidebar .list-group-item:hover {
+    cursor: pointer;
+}
+
+#swatches {
+    transition: 300ms;
+}
+
+/*
+Sidebar drawer menu--END
+*/
+
+/*
+Rename onlick start
+*/
+#rename {
+    z-index: 1;
+}
+/*
+Rename onclick end
 */
 
 /*
