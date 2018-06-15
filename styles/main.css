@@ -9,6 +9,7 @@ General styling for major elements
 body {
     font-family: "Roboto", sans-serif;
     margin: 0;
+    transition: all 300ms;
 }
 /*DEFINE COLOR VARIABLES*/
 :root {
@@ -115,11 +116,22 @@ Sidebar drawer menu--BEGIN
 */
 #sidebar {
     background: #ffffff;
-    transition-delay: 300ms;
-    max-width: 300px;
+    transition: 300ms;
+    overflow: hidden;
     height: calc(100% - 55px);
     margin-right: -15px;
     margin-top: -55px;
+}
+.keep-width {
+    width: 300px;
+}
+
+.closed {
+    width: 0;
+}
+
+.open {
+    width: 300px;  
 }
 
 #sidebar h2 {
@@ -137,9 +149,12 @@ Sidebar drawer menu--BEGIN
 
 #sidebar .choose-color {
     height: 100px;
-    background: red;
 
 }
+#sidebar .choose-color:hover {
+    opacity: 0.8;
+}
+
 
 
 /*
