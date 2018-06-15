@@ -73,20 +73,23 @@ let sidebar = {
 	},
 
 	showColors: function() {
-		let colorContainer = $('#color-container')
-		//for each color in the colors array create the aquare and add an event listener to it. 
+		let showColorList = $('#change-colors');
+		let swatches = $('#swatches');
+		showColorList.on('click', function(e){
+			swatches.toggleClass('closed');
+		})
+
+		let colorContainer = $('#color-container');
+
+		//for each color in the colors array create the square and add an event listener to it. 
 		for(let color in this.colors){
-
 			colorContainer.append(`<div class="col-sm-5 choose-color m-1 rounded" id="${color}" style="background-color: ${this.colors[color].primary}"></div>`);
-			console.log(this.colors[color]);
-
 			$(document).on('click',`#${color}`,function() {
 				document.documentElement.style.setProperty('--dark', this.colors[color].dark);
 				document.documentElement.style.setProperty('--primary', this.colors[color].primary);
 				document.documentElement.style.setProperty('--secondary', this.colors[color].secondary);
 				document.documentElement.style.setProperty('--accent', this.colors[color].accent);
 			}.bind(this));
-
 		}
 	}
 
