@@ -122,6 +122,11 @@ Sidebar drawer menu--BEGIN
     margin-right: -15px;
     margin-top: -55px;
 }
+
+.sidebar-card{
+    z-index:1;
+}
+
 .keep-width {
     width: 300px;
 }
@@ -185,6 +190,22 @@ Rename onlick start
 /*
 Rename onclick end
 */
+
+/*
+card list styling start
+*/
+.btn-add-cardlist-div {
+    width: 270px;
+}
+
+.btn-add-cardlist{
+    width: 100%;
+    
+}
+/*
+card list styling end
+*/
+
 
 /*
 media query for screens under 750px

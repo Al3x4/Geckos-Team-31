@@ -44,7 +44,7 @@ const colors = {
 
 let sidebar = {
 
-	colors: colors,
+	colors,
 	
 	init : function(){
 		let showMenu 	= $('#show-menu'),
@@ -132,13 +132,56 @@ let rename = {
 
 };
 
+//make object with arrays corresponding to list names
+let cardLists = {
 
+};
+
+//logic for "add a list..." btn onlick
+let addCardlistBtn = {
+
+	//create a function for adding new card lists to cardLists object
+	init: function(){
+		let addBtnDiv		= $('#add-cardlist-btn-div'),
+			addListBtn 		= $('#btn-add-cardlist'),
+			addListCard		= $('#card-add-list'),
+			addListInput 	= $('#input-add-cardlist'),
+			saveListBtn		= $('#btn-save-list'),
+			closeListForm 	= $('#btn-close-list-form');
+
+		//hide add a list button and show the add list form
+		addListBtn.on('click', function(){
+			addBtnDiv.hide();
+			addListCard.removeClass('invisible');
+		});
+
+		//add the new card list to the cardLists object
+		saveListBtn.on('click', function(){
+			//check that the input box isn't empty first
+			if(addListInput.val() !== ''){
+				cardLists[addListInput.val()] = [];
+				addListInput.val('');
+				addListCard.addClass('invisible');
+				addBtnDiv.show();
+				console.log(cardLists);
+			}
+		});
+
+		//close add list card when X is clicked
+		closeListForm.on('click', function(){
+			addListCard.addClass('invisible');
+			addBtnDiv.show();
+		});
+	}
+	
+};
 
 
 
 
 sidebar.init();
 rename.init();
+addCardlistBtn.init();
 
 
 
