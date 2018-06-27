@@ -202,6 +202,20 @@ card list styling start
     width: 100%;
     
 }
+
+.cardlist{
+    width: 270px;
+    max-height: 100%;
+}
+
+.btn-add-card {
+    width:100%;
+}
+
+.cardlist-body{
+    max-height: 100%;
+    overflow-y: scroll;
+}
 /*
 card list styling end
 */
