@@ -153,17 +153,37 @@ let addCardlistBtn = {
 		addListBtn.on('click', function(){
 			addBtnDiv.hide();
 			addListCard.removeClass('invisible');
+			addListInput.val('');
 		});
 
 		//add the new card list to the cardLists object
 		saveListBtn.on('click', function(){
 			//check that the input box isn't empty first
 			if(addListInput.val() !== ''){
+				//add key with name of list and value of empty arr to cardLists object
 				cardLists[addListInput.val()] = [];
-				addListInput.val('');
 				addListCard.addClass('invisible');
 				addBtnDiv.show();
-				console.log(cardLists);
+				//console.log(cardLists);
+				console.log(addListInput.val());
+
+				//create an html template for the cardlist div
+				let cardList = `
+				<div class="d-flex flex-column mx-1 cardlist rounded dark" id="${addListInput.val()}">
+					<div class="cardlist-header text-white d-flex align-items-center">
+						<h5 class="p-2 mb-0">${addListInput.val()}</h5>
+					</div>
+					<div class="cardlist-body m-2 flex-fill rounded">
+						<!--cards go under here-->
+					</div>
+					<div class="cardlist-footer mt-auto">
+						<button type="button" class="btn dark text-white btn-add-card d-flex justify-content-left">Add a card...</button>
+					</div>
+				</div>
+				`;
+
+				//prepend the card list template to main body div
+				$('#main-board').prepend(cardList);
 			}
 		});
 
