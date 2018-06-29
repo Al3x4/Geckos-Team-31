@@ -133,9 +133,7 @@ let rename = {
 };
 
 //make object with arrays corresponding to list names
-let cardLists = {
-
-};
+let cardLists = {};
 
 //logic for "add a list..." btn onlick
 let addCardlistBtn = {
@@ -164,8 +162,8 @@ let addCardlistBtn = {
 				cardLists[addListInput.val()] = [];
 				addListCard.addClass('invisible');
 				addBtnDiv.show();
-				//console.log(cardLists);
-				console.log(addListInput.val());
+				console.log(cardLists);
+				//console.log(addListInput.val());
 
 				//create an html template for the cardlist div
 				let cardList = `
@@ -173,17 +171,26 @@ let addCardlistBtn = {
 					<div class="cardlist-header text-white d-flex align-items-center">
 						<h5 class="p-2 mb-0">${addListInput.val()}</h5>
 					</div>
-					<div class="cardlist-body m-2 flex-fill rounded">
+					<div class="cardlist-body m-2 flex-fill rounded" id="${addListInput.val()}-body">
 						<!--cards go under here-->
 					</div>
 					<div class="cardlist-footer mt-auto">
 						<button type="button" class="btn dark text-white btn-add-card d-flex justify-content-left">Add a card...</button>
+						<div class="d-none m-2">
+							<textarea class="form-control w-100 card-name-input" rows="2"></textarea>	
+							<div class="d-flex justify-items-start mt-2">	
+								<button type="button" class="btn primary text-white btn-add mr-3">Add</button>
+								<button type="button" class="text-white close btn-close-card">
+									<span><i class="fas fa-times"></i></span>
+								</button>
+							</div>
+						</div>
 					</div>
 				</div>
 				`;
 
 				//prepend the card list template to main body div
-				$('#main-board').prepend(cardList);
+				$(cardList).insertBefore('.btn-add-cardlist-div');
 			}
 		});
 
@@ -196,12 +203,62 @@ let addCardlistBtn = {
 	
 };
 
+//logic for adding a new card
+let addCard = {
+
+	init: function(){
+
+		//since add-card button is added dynamically to DOM, must use a new document query
+		$(document).on('click', '.btn-add-card', function(event){
+			//console.log(this);
+			$(this).removeClass('d-flex');
+			$(this).addClass('d-none');
+			$(this).siblings().removeClass('d-none');
+			$(this).siblings().addClass('d-flex flex-column');
+			event.preventDefault();
+		});
+
+		//append a card to the list body div when 'add' clicked
+		$(document).on('click', '.btn-add', function(event){
+			//store value of the text area in cardTitle
+			let cardTitle = $(this).parent().prev().val();
+			//create template for new card
+			let newCard = `
+				<div class="listed-card rounded p-2 my-2 d-flex flex-wrap">
+					<p class="w-100">${cardTitle}</p>
+				</div>
+			`;
+			
+			//append the card to the card list body
+			if(cardTitle !== ''){
+				$(this).parent().parent().parent()
+				.prev().append(newCard);	
+			}
+		
+			//close the button group
+			$(this).parent().prev().val('');
+			$(this).parent().parent().addClass('d-none').removeClass('d-flex');
+			$(this).parent().parent().prev().removeClass('d-none');
+		});
+
+		//close button group when X is clicked
+		$(document).on('click', '.btn-close-card', function(event){
+			$(this).parent().prev().val('');
+			$(this).parent().parent().addClass('d-none').removeClass('d-flex');
+			$(this).parent().parent().prev().removeClass('d-none');
+		});
+
+	}
+
+};
+
 
 
 
 sidebar.init();
 rename.init();
 addCardlistBtn.init();
+addCard.init();
 
 
 
