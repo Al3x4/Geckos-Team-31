@@ -214,10 +214,22 @@ card list styling start
 
 .cardlist-body{
     max-height: 100%;
-    overflow-y: scroll;
 }
+
 /*
 card list styling end
+*/
+
+
+/*
+card styling start
+*/
+.listed-card{
+    background-color: white;
+    word-break: break-all;
+}
+/*
+card styling end
 */
 
 
