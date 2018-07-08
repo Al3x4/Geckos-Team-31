@@ -194,7 +194,7 @@ let addCardlistBtn = {
 				//prepend the card list template to main body div
 				$(cardList).insertBefore('.btn-add-cardlist-div');
 
-
+				//sort function via http://jsfiddle.net/jaakkytt/FVyS2/
 				$(".cardlist-container" ).sortable({
 				    connectWith: ".cardlist-container",
 				    handle: ".cardlist-header",
@@ -222,22 +222,27 @@ let addCardlistBtn = {
 				    icon.closest( ".cardlist" ).find( ".cardlist-body" ).toggle();
 				});
 
+				$(".cardlist-body").sortable({
+					connectWith: ".cardlist-body",
+					cancel: ".cardlist-header" 
+				}).disableSelection();
+
 				function tilt_direction(item) {
-    var left_pos = item.position().left,
-        move_handler = function (e) {
-            if (e.pageX >= left_pos) {
-                item.addClass("right");
-                item.removeClass("left");
-            } else {
-                item.addClass("left");
-                item.removeClass("right");
-            }
-            left_pos = e.pageX;
-        };
-    $("html").bind("mousemove", move_handler);
-    item.data("move_handler", move_handler);
-}  
-							}
+				    var left_pos = item.position().left,
+				        move_handler = function (e) {
+				            if (e.pageX >= left_pos) {
+				                item.addClass("right");
+				                item.removeClass("left");
+				            } else {
+				                item.addClass("left");
+				                item.removeClass("right");
+				            }
+				            left_pos = e.pageX;
+				        };
+				    $("html").bind("mousemove", move_handler);
+				    item.data("move_handler", move_handler);
+				}  
+			}
 		});
 
 		//close add list card when X is clicked
@@ -247,7 +252,7 @@ let addCardlistBtn = {
 		});
 	}
 
-	//sort function via http://jsfiddle.net/jaakkytt/FVyS2/
+	
 
 		
 	
@@ -297,6 +302,8 @@ let addCard = {
 			$(this).parent().parent().addClass('d-none').removeClass('d-flex');
 			$(this).parent().parent().prev().removeClass('d-none');
 		});
+
+
 
 	}
 
