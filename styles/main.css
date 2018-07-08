@@ -125,6 +125,7 @@ Sidebar drawer menu--BEGIN
 
 .sidebar-card{
     z-index:1;
+    height: 100%;
 }
 
 .keep-width {
@@ -228,9 +229,62 @@ card styling start
     background-color: white;
     word-break: break-all;
 }
+
+  .cardlist {
+    margin: 0 1em 1em 0;
+    padding: 0.3em;
+  }
+  .cardlist-header {
+    padding: 0.2em 0.3em;
+    margin-bottom: 0.5em;
+    position: relative;
+  }
+  .cardlist-toggle {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    margin-top: -8px;
+  }
+  .cardlist-body {
+    padding: 0.4em;
+  }
+  .cardlist-placeholder {
+    border: 1px dotted black;
+    margin: 0 1em 1em 0;
+    height: 50px;
+  }
+
 /*
 card styling end
 */
+
+/*dragging styles*/
+
+body.dragging, body.dragging * {
+  cursor: move !important;
+}
+
+.tilt.right {
+    transform: rotate(3deg);
+    -moz-transform: rotate(3deg);
+    -webkit-transform: rotate(3deg);
+}
+.tilt.left {
+    transform: rotate(-3deg);
+    -moz-transform: rotate(-3deg);
+    -webkit-transform: rotate(-3deg);
+
+}
+
+.dragged {
+  position: absolute;
+  opacity: 0.5;
+  z-index: 2000;
+}
+
+
+
+
 
 
 /*
