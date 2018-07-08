@@ -102,7 +102,6 @@ Main body styling--BEGIN
 
 .main-body {
     height: 100vh;
-    min-width: 100vw;
     overflow: auto;
 }
 
@@ -195,6 +194,7 @@ Rename onclick end
 /*
 card list styling start
 */
+
 .btn-add-cardlist-div {
     width: 270px;
 }
@@ -210,15 +210,10 @@ card list styling start
 
 .cardlist{
     width: 270px;
-    max-height: 100%;
 }
 
 .btn-add-card {
     width:100%;
-}
-
-.cardlist-body{
-    max-height: 100%;
 }
 
 /*
@@ -234,29 +229,22 @@ card styling start
     word-break: break-all;
 }
 
-  .cardlist {
-    margin: 0 1em 1em 0;
-    padding: 0.3em;
-  }
-  .cardlist-header {
-    padding: 0.2em 0.3em;
-    margin-bottom: 0.5em;
+.cardlist-header {
     position: relative;
-  }
-  .cardlist-toggle {
+}
+
+.cardlist-toggle {
     position: absolute;
     top: 50%;
     right: 0;
     margin-top: -8px;
-  }
-  .cardlist-body {
-    padding: 0.4em;
-  }
-  .cardlist-placeholder {
+}
+
+.cardlist-placeholder {
     border: 1px dotted black;
     margin: 0 1em 1em 0;
     height: 50px;
-  }
+}
 
 /*
 card styling end
