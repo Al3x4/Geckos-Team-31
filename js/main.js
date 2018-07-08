@@ -168,30 +168,76 @@ let addCardlistBtn = {
 				//create an html template for the cardlist div
 				let cardList = `
 				<div class="d-flex flex-column mx-1 cardlist rounded dark" id="${addListInput.val()}">
-					<div class="cardlist-header text-white d-flex align-items-center">
-						<h5 class="p-2 mb-0">${addListInput.val()}</h5>
-					</div>
-					<div class="cardlist-body m-2 flex-fill rounded" id="${addListInput.val()}-body">
-						<!--cards go under here-->
-					</div>
-					<div class="cardlist-footer mt-auto">
-						<button type="button" class="btn dark text-white btn-add-card d-flex justify-content-left">Add a card...</button>
-						<div class="d-none m-2">
-							<textarea class="form-control w-100 card-name-input" rows="2"></textarea>	
-							<div class="d-flex justify-items-start mt-2">	
-								<button type="button" class="btn primary text-white btn-add mr-3">Add</button>
-								<button type="button" class="text-white close btn-close-card">
-									<span><i class="fas fa-times"></i></span>
-								</button>
+					
+						<div class="cardlist-header text-white d-flex align-items-center">
+							<h5 class="p-2 mb-0">${addListInput.val()}</h5>
+						</div>
+						<div class="cardlist-body m-2 flex-fill rounded" id="${addListInput.val()}-body">
+							<!--cards go under here-->
+						</div>
+						<div class="cardlist-footer mt-auto">
+							<button type="button" class="btn dark text-white btn-add-card d-flex justify-content-left">Add a card...</button>
+							<div class="d-none m-2">
+								<textarea class="form-control w-100 card-name-input" rows="2"></textarea>	
+								<div class="d-flex justify-items-start mt-2">	
+									<button type="button" class="btn primary text-white btn-add mr-3">Add</button>
+									<button type="button" class="text-white close btn-close-card">
+										<span><i class="fas fa-times"></i></span>
+									</button>
+								</div>
 							</div>
 						</div>
-					</div>
+				
 				</div>
 				`;
 
 				//prepend the card list template to main body div
 				$(cardList).insertBefore('.btn-add-cardlist-div');
-			}
+
+
+				$(".cardlist-container" ).sortable({
+				    connectWith: ".cardlist-container",
+				    handle: ".cardlist-header",
+				    start: function (event, ui) {
+				    	console.log('starting');
+				        ui.item.addClass('tilt');
+				        tilt_direction(ui.item);
+				    },
+				    stop: function (event, ui) {
+				        ui.item.removeClass("tilt");
+				        $("html").unbind('mousemove', ui.item.data("move_handler"));
+				        ui.item.removeData("move_handler");
+				    }
+				});
+
+				$( ".cardlist" )
+				    .addClass( "ui-widget ui-widget-content ui-helper-clearfix ui-corner-all" )
+				    .find( ".cardlist-header" )
+				    .addClass( "ui-widget-header ui-corner-all" )
+				    .prepend( "<span class='ui-icon ui-icon-minusthick portlet-toggle'></span>");
+
+				$( ".cardlist-toggle" ).click(function() {
+				    var icon = $( this );
+				    icon.toggleClass( "ui-icon-minusthick ui-icon-plusthick" );
+				    icon.closest( ".cardlist" ).find( ".cardlist-body" ).toggle();
+				});
+
+				function tilt_direction(item) {
+    var left_pos = item.position().left,
+        move_handler = function (e) {
+            if (e.pageX >= left_pos) {
+                item.addClass("right");
+                item.removeClass("left");
+            } else {
+                item.addClass("left");
+                item.removeClass("right");
+            }
+            left_pos = e.pageX;
+        };
+    $("html").bind("mousemove", move_handler);
+    item.data("move_handler", move_handler);
+}  
+							}
 		});
 
 		//close add list card when X is clicked
@@ -200,6 +246,10 @@ let addCardlistBtn = {
 			addBtnDiv.show();
 		});
 	}
+
+	//sort function via http://jsfiddle.net/jaakkytt/FVyS2/
+
+		
 	
 };
 
