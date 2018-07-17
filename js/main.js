@@ -167,32 +167,47 @@ window.onload = function () {
 
 					//create an html template for the cardlist div
 					let cardList = `
-				<div class="d-flex flex-column mx-1 cardlist rounded dark" id="${addListInput.val()}">
-					
-						<div class="cardlist-header text-white d-flex align-items-center">
-							<h5 class="p-2 mb-0">${addListInput.val()}</h5>
-						</div>
-						<div class="cardlist-body m-2 flex-fill rounded" id="${addListInput.val()}-body">
-							<!--cards go under here-->
-						</div>
-						<div class="cardlist-footer mt-auto">
-							<button type="button" class="btn dark text-white btn-add-card d-flex justify-content-left">Add a card...</button>
-							<div class="d-none m-2">
-								<textarea class="form-control w-100 card-name-input" rows="2"></textarea>	
-								<div class="d-flex justify-items-start mt-2">	
-									<button type="button" class="btn primary text-white btn-add mr-3">Add</button>
-									<button type="button" class="text-white close btn-close-card">
-										<span><i class="fas fa-times"></i></span>
-									</button>
+						<div class="d-flex flex-column flex-shrink-0 mx-1 cardlist rounded dark" id="${addListInput.val()}">
+							
+							<div class="cardlist-header text-white d-flex align-items-center">
+								<h5 class="p-2 mb-0 mt-1">${addListInput.val()}</h5>
+							</div>
+							<input type="text" class="d-none change-listname m-2"></input>
+							<div class="cardlist-body m-2 flex-fill rounded" id="${addListInput.val()}-body">
+								<!--cards go under here-->
+							</div>
+							<div class="cardlist-footer mt-auto">
+								<button type="button" class="btn dark text-white btn-add-card d-flex justify-content-left">Add a card...</button>
+								<div class="d-none m-2">
+									<textarea class="form-control w-100 card-name-input" rows="2"></textarea>	
+									<div class="d-flex justify-items-start mt-2">	
+										<button type="button" class="btn primary text-white btn-add mr-3">Add</button>
+										<button type="button" class="text-white close btn-close-card">
+											<span><i class="fas fa-times"></i></span>
+										</button>
+									</div>
 								</div>
 							</div>
+						
 						</div>
-				
-				</div>
-				`;
+						`;
 
 					//prepend the card list template to main body div
 					$(cardList).insertBefore('.btn-add-cardlist-div');
+
+					//allow card list to be renamed on click of title
+					$(document).on('click', '.cardlist-header', function(){
+						$(this).removeClass('d-flex').addClass('d-none');
+						$(this).next().removeClass('d-none').focus();
+						$(this).next().keyup(function(event){
+							if (event.keyCode === 13){
+								console.log( $(this).val() );
+								$(this).prev().find('h5').text( $(this).val() );
+								$(this).removeClass('d-flex').addClass('d-none');
+								$(this).prev().removeClass('d-none');
+							}
+						});
+					});
 
 					//sort function via http://jsfiddle.net/jaakkytt/FVyS2/
 					$(".cardlist-container").sortable({
