@@ -84,13 +84,18 @@
 
       </div>
     </div>
-    <!--------------------------------------------- secondary nav section BEGIN -->
+    <!--------------------------------------------- secondary nav section END-->
 
     <!-- -----------------------------------------------------sidebar - BEGIN -->
     <nav id="sidebar" class="float-right closed">
       <div class="card sidebar-card rounded-0 keep-width">
         <ul class="list-group list-group-flush">
-          <li class="list-group-item"><h2 class="d-inline-block position-relative" >Menu</h2><span  id="close-menu" class="float-right position-absolute">&times;</span></li>
+          <li class="list-group-item">
+            <h2 class="d-inline-block position-relative" >Menu</h2>
+            <span id="close-menu" class="float-right position-absolute">
+                <i class="fas fa-times"></i>
+            </span>
+          </li>
           <li class="list-group-item" id="change-colors"><span>Change background color</span></li>
           <li class="list-group-item closed" id="swatches">
             <div class="container">
@@ -120,14 +125,13 @@
     </div>
     <!----------------------------------------------------------rename onclick - END -->
 
-
     <!---------------------------------------------------------------------------- Main body BEGIN -->
-    <div class="row"> 
+    <div class="row" id="board-container"> 
 
       <!-----------------------------------------------main boards area - BEGIN -->
       <main class="col d-flex cardlist-container" id="main-board">
 
-        <div class="btn-add-cardlist-div mx-1">
+        <div class="btn-add-cardlist-div ml-1 mr-2">
           <div id="add-cardlist-btn-div">
             <button type="button" class="btn dark text-white btn-add-cardlist d-flex justify-content-left" id="btn-add-cardlist">Add a list...</button>
           </div>

@@ -52,7 +52,6 @@ top navbar styling
     width: 150px;
 }
 
-
 .abs-center-x {
     position: absolute;
     left: 50%;
@@ -195,8 +194,14 @@ Rename onclick end
 card list styling start
 */
 
+.cardlist {
+    max-height: 80vh;
+    width: 270px;
+}
+
 .btn-add-cardlist-div {
     width: 270px;
+    min-width: 270px;
 }
 
 .btn-add-cardlist{
@@ -205,11 +210,15 @@ card list styling start
 }
 
 .cardlist-header {
-    overflow-x: hidden;
+    overflow: hidden;
 }
 
-.cardlist{
-    width: 270px;
+.cardlist-header:focus {
+    background-color: var(--secondary);
+}
+
+.cardlist-body{
+    overflow-y: auto;
 }
 
 .btn-add-card {
