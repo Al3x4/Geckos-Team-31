@@ -50,7 +50,7 @@ window.onload = function () {
 			let showMenu = $('#show-menu'),
 				closeMenu = $('#close-menu'),
 				menu = $('#sidebar');
-				cardContainer = $('#board-container')
+			cardContainer = $('#board-container')
 
 			closeMenu.on('click', function () {
 				menu.removeClass('open');
@@ -173,15 +173,22 @@ window.onload = function () {
 					let cardList = `
 						<div class="d-flex flex-column flex-shrink-0 mx-1 cardlist rounded dark" id="${addListInput.val()}">
 							
-							<div class="cardlist-header text-white d-flex align-items-center">
-								<h5 class="p-2 mb-0 mt-1">${addListInput.val()}</h5>
+							<div class="cardlist-header text-white d-flex justify-content-end">
+								<h5 class="p-2 mb-0 mt-1 align-self-center mr-auto">${addListInput.val()}</h5>
+								<div class="card-overlay d-flex position-absolute">
+									<div class="overlay-row cardlist-overlay-row d-none">
+										<button class="btn btn-sm btn-overlay btn-overlay-delete">
+											<span><i class="fas fa-trash-alt fa-sm"></i></span>
+										</button>
+									</div>
+								</div>
 							</div>
 							<input type="text" class="d-none change-listname m-2"></input>
 							<div class="cardlist-body m-2 flex-fill rounded" id="${addListInput.val()}-body">
 								<!--cards go under here-->
 							</div>
 							<div class="cardlist-footer mt-auto">
-								<button type="button" class="btn dark text-white btn-add-card d-flex justify-content-left">Add a card...</button>
+								<button type="button" class="btn dark text-white btn-add-card d-flex justify-content-left">+  Add a card...</button>
 								<div class="d-none m-2">
 									<textarea class="form-control w-100 card-name-input" rows="2"></textarea>	
 									<div class="d-flex justify-items-start mt-2">	
@@ -200,17 +207,32 @@ window.onload = function () {
 					$(cardList).insertBefore('.btn-add-cardlist-div');
 
 					//allow card list to be renamed on click of title
-					$(document).on('click', '.cardlist-header', function(){
-						$(this).removeClass('d-flex').addClass('d-none');
+					$(document).on('click', '.cardlist-header', function () {
+						//hide original title
+						$(this).find('h5').removeClass('d-flex').addClass('d-none');
 						$(this).next().removeClass('d-none').focus();
-						$(this).next().keyup(function(event){
-							if (event.keyCode === 13){
-								console.log( $(this).val() );
-								$(this).prev().find('h5').text( $(this).val() );
+						$(this).next().keyup(function (event) {
+							if (event.keyCode === 13) {
+								console.log($(this).val());
+								$(this).prev().find('h5').text($(this).val());
 								$(this).removeClass('d-flex').addClass('d-none');
-								$(this).prev().removeClass('d-none');
+								$(this).prev().find('h5').removeClass('d-none');
 							}
 						});
+					});
+
+					//make btn-overlay appear on mouseover of cardlist
+					$(document).on('mouseover', '.cardlist', (function (e) {
+							$(this).find('div.cardlist-overlay-row').removeClass('d-none');
+						}))
+						//btn-overlay disappear on mouseout
+						.on('mouseout', '.cardlist', (function (e) {
+							$(this).find('div.cardlist-overlay-row').addClass('d-none');
+						}));
+
+					//btn-overlay-delete deletes cardlist on click
+					$(document).on('click', '.btn-overlay-delete', function (e) {
+						$(this).closest('div.cardlist').remove();
 					});
 
 					//sort function via http://jsfiddle.net/jaakkytt/FVyS2/
@@ -388,14 +410,14 @@ window.onload = function () {
 					// show the rename card form
 					editCardForm.addClass('d-none');
 				});
-				
+
 				//close out form and show card when X clicked
-				$(document).on('click', '.close-rename', function(){
+				$(document).on('click', '.close-rename', function () {
 					$(parentCard).find('p.card-title').removeClass('d-none');
 					$(parentCard).find('div.overlay-row').children().removeClass('d-none');
 					editCardForm.addClass('d-none');
 				});
-				
+
 
 			});
 

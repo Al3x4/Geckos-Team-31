@@ -199,6 +199,7 @@ Rename onlick start
 */
 #rename {
     z-index: 1;
+    margin-top: 10vh;
 }
 /*
 Rename onclick end
@@ -330,6 +331,10 @@ media query for screens under 750px
 
     .logo{
         display: none;
+    }
+
+    #rename {
+        margin-top: 15vh;
     }
 
 }
