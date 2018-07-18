@@ -50,13 +50,17 @@ window.onload = function () {
 			let showMenu = $('#show-menu'),
 				closeMenu = $('#close-menu'),
 				menu = $('#sidebar');
+				cardContainer = $('#board-container')
 
 			closeMenu.on('click', function () {
 				menu.removeClass('open');
+				cardContainer.css('width', '100%');
 			});
 
 			showMenu.on('click', function () {
 				menu.addClass('open');
+				cardContainer.css('width', 'calc(100% - 270px)');
+
 			});
 
 
