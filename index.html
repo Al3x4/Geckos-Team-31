@@ -18,7 +18,7 @@
 
 <body>
 
-  <div class="container-fluid primary main-body" id="main-body">
+  <div class="container-fluid primary main-body container-fluid d-flex h-100 flex-column" id="main-body">
     
     <!----------------------------------------------------------navbar row BEGIN-->
     <div class="row navbar-row">
@@ -84,26 +84,7 @@
 
       </div>
     </div>
-    <!--------------------------------------------- secondary nav section BEGIN -->
-
-    <!-- -----------------------------------------------------sidebar - BEGIN -->
-    <nav id="sidebar" class="float-right closed">
-      <div class="card rounded-0 keep-width">
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item"><h2 class="d-inline-block position-relative" >Menu</h2><span  id="close-menu" class="float-right position-absolute">&times;</span></li>
-          <li class="list-group-item" id="change-colors"><span>Change background color</span></li>
-          <li class="list-group-item closed" id="swatches">
-            <div class="container">
-              <div id="color-container" class="row">
-
-              </div>
-            </div>
-          </li>
-          <li class="list-group-item"><span>Filter boards</span> </li>
-       </ul>
-      </div>
-    </nav>
-    <!----------------------------------------------------------sidebar - END -->
+    <!--------------------------------------------- secondary nav section END-->
 
     <!----------------------------------------------------------rename onclick - START -->
     <div class="card rounded-0 float-left position-absolute invisible" id="rename">
@@ -120,19 +101,60 @@
     </div>
     <!----------------------------------------------------------rename onclick - END -->
 
+    <!--------------------------------------------------------------- Main body BEGIN -->
+    <div class="row flex-fill" id="board-container"> 
 
-    <!---------------------------------------------------------------------------- Main body BEGIN -->
-    <div class="row"> 
+      <!---------------------------------------- -------main boards area - BEGIN -->
+      <main class="col d-flex cardlist-container align-items-start" id="main-board">
 
-      <!-----------------------------------------------main boards area - BEGIN -->
-      <main class="col">
-
-        <div>This is where the cards go</div>
+        <div class="btn-add-cardlist-div ml-1 mr-2">
+          <div id="add-cardlist-btn-div">
+            <button type="button" class="btn dark text-white btn-add-cardlist d-flex justify-content-left" id="btn-add-cardlist">+  Add a list...</button>
+          </div>
+          <div class="card add-list-card invisible position-relative" id="card-add-list">
+            <form class="p-2">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Add a list..." id="input-add-cardlist">
+              </div>
+              <div class="d-flex align-items-center justify-items-start">
+                <button type="button" class="btn dark text-white" id="btn-save-list">Save</button>
+                <button type="button" class="close mx-3" id="btn-close-list-form">
+                  <span><i class="fas fa-times"></i></span>
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
 
       </main>
       <!-------------------------------------------------main boards area - END -->
 
-  </div>
+   </div>
+
+    <!-- -----------------------------------------------------sidebar - BEGIN -->
+    <nav id="sidebar" class="float-right closed">
+      <div class="card sidebar-card rounded-0 keep-width">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+            <h2 class="d-inline-block position-relative" >Menu</h2>
+            <span id="close-menu" class="float-right position-absolute">
+                <i class="fas fa-times"></i>
+            </span>
+          </li>
+          <li class="list-group-item" id="change-colors"><span>Change background color</span></li>
+          <li class="list-group-item closed" id="swatches">
+            <div class="container">
+              <div id="color-container" class="row">
+
+              </div>
+            </div>
+          </li>
+          <li class="list-group-item"><span>Filter boards</span> </li>
+       </ul>
+      </div>
+    </nav>
+    <!----------------------------------------------------------sidebar - END -->
+</div>
 
 
 
@@ -175,13 +197,20 @@
   <!--end of create button onclick modal-->
 
 
+
+
   <!-- JS dependencies for Bootstrap 4 and reference to local JS file-->
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-  crossorigin="anonymous"></script>
+  <script src="http://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
   crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
-  crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"  crossorigin="anonymous"></script>
+  <script type="text/javascript" src="js/jquery-sortable.js"></script>
+  <script
+        src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+        integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+        crossorigin="anonymous"></script>
   <script type="text/javascript" src="js/main.js"></script>
 
 </body>

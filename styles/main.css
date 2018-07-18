@@ -6,6 +6,13 @@ I added bootstrap for the browser reset features. (remove margins padding etc). 
 /*
 General styling for major elements
 */
+
+html, 
+body {
+    height: 100%;
+}
+
+
 body {
     font-family: "Roboto", sans-serif;
     margin: 0;
@@ -48,10 +55,14 @@ Color pallettes
 top navbar styling
 */
 
+.flex-fill {
+    flex:1;
+}
+
+
 .search-bar{
     width: 150px;
 }
-
 
 .abs-center-x {
     position: absolute;
@@ -100,10 +111,8 @@ Secondary nav styles--END
 Main body styling--BEGIN
 */
 
-.main-body {
-    height: 100vh;
-    min-width: 100vw;
-    overflow: auto;
+#board-container {
+    overflow-x: scroll;
 }
 
 /*
@@ -121,7 +130,16 @@ Sidebar drawer menu--BEGIN
     height: calc(100% - 55px);
     margin-right: -15px;
     margin-top: -55px;
+    position: absolute;
+    right: 15px;
+    bottom: 0;
 }
+
+.sidebar-card{
+    z-index:1;
+    height: 100%;
+}
+
 .keep-width {
     width: 300px;
 }
@@ -181,10 +199,130 @@ Rename onlick start
 */
 #rename {
     z-index: 1;
+    margin-top: 10vh;
 }
 /*
 Rename onclick end
 */
+
+/*
+card list styling start
+*/
+
+.cardlist {
+    max-height: 80vh;
+    width: 270px;
+}
+
+.btn-add-cardlist-div {
+    width: 270px;
+    min-width: 270px;
+}
+
+.btn-add-cardlist{
+    width: 100%;
+    
+}
+
+.cardlist-header {
+    overflow: hidden;
+}
+
+.cardlist-header:focus {
+    background-color: var(--secondary);
+}
+
+.cardlist-body{
+    overflow-y: auto;
+    min-height: 20px;
+}
+
+.btn-add-card {
+    width:100%;
+}
+
+/*
+card list styling end
+*/
+
+
+/*
+card styling start
+*/
+.listed-card{
+    background-color: white;
+    word-break: break-all;
+}
+
+.cardlist-header {
+    position: relative;
+}
+
+.cardlist-toggle {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    margin-top: -8px;
+}
+
+.cardlist-placeholder {
+    border: 1px dotted black;
+    margin: 0 1em 1em 0;
+    height: 50px;
+}
+
+.card-overlay {
+    background-color: none; 
+    z-index: 5;
+    padding: 2px;
+    flex: 0 0 100%;
+}
+
+.btn-overlay {
+    opacity: 0.7;
+    background-color: #e2e4e6!important;
+}
+
+.btn-overlay:hover {
+    opacity: 1;
+}
+
+.btn-overlay-delete:hover {
+    background-color: #f46b61!important;
+}
+
+/*
+card styling end
+*/
+
+/*dragging styles*/
+
+body.dragging, body.dragging * {
+  cursor: move !important;
+}
+
+.tilt.right {
+    transform: rotate(3deg);
+    -moz-transform: rotate(3deg);
+    -webkit-transform: rotate(3deg);
+}
+.tilt.left {
+    transform: rotate(-3deg);
+    -moz-transform: rotate(-3deg);
+    -webkit-transform: rotate(-3deg);
+
+}
+
+.dragged {
+  position: absolute;
+  opacity: 0.5;
+  z-index: 2000;
+}
+
+
+
+
+
 
 /*
 media query for screens under 750px
@@ -193,6 +331,10 @@ media query for screens under 750px
 
     .logo{
         display: none;
+    }
+
+    #rename {
+        margin-top: 15vh;
     }
 
 }
