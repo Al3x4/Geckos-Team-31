@@ -177,7 +177,7 @@ window.onload = function () {
 								<!--cards go under here-->
 							</div>
 							<div class="cardlist-footer mt-auto">
-								<button type="button" class="btn dark text-white btn-add-card d-flex justify-content-left">Add a card...</button>
+								<button type="button" class="btn dark text-white btn-add-card d-flex justify-content-left">+  Add a card...</button>
 								<div class="d-none m-2">
 									<textarea class="form-control w-100 card-name-input" rows="2"></textarea>	
 									<div class="d-flex justify-items-start mt-2">	
