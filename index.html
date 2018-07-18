@@ -18,7 +18,7 @@
 
 <body>
 
-  <div class="container-fluid primary main-body" id="main-body">
+  <div class="container-fluid primary main-body container-fluid d-flex h-100 flex-column" id="main-body">
     
     <!----------------------------------------------------------navbar row BEGIN-->
     <div class="row navbar-row">
@@ -86,30 +86,6 @@
     </div>
     <!--------------------------------------------- secondary nav section END-->
 
-    <!-- -----------------------------------------------------sidebar - BEGIN -->
-    <nav id="sidebar" class="float-right closed">
-      <div class="card sidebar-card rounded-0 keep-width">
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">
-            <h2 class="d-inline-block position-relative" >Menu</h2>
-            <span id="close-menu" class="float-right position-absolute">
-                <i class="fas fa-times"></i>
-            </span>
-          </li>
-          <li class="list-group-item" id="change-colors"><span>Change background color</span></li>
-          <li class="list-group-item closed" id="swatches">
-            <div class="container">
-              <div id="color-container" class="row">
-
-              </div>
-            </div>
-          </li>
-          <li class="list-group-item"><span>Filter boards</span> </li>
-       </ul>
-      </div>
-    </nav>
-    <!----------------------------------------------------------sidebar - END -->
-
     <!----------------------------------------------------------rename onclick - START -->
     <div class="card rounded-0 float-left position-absolute invisible" id="rename">
       <h5 class="card-header">Rename Board
@@ -125,11 +101,11 @@
     </div>
     <!----------------------------------------------------------rename onclick - END -->
 
-    <!---------------------------------------------------------------------------- Main body BEGIN -->
-    <div class="row" id="board-container"> 
+    <!--------------------------------------------------------------- Main body BEGIN -->
+    <div class="row flex-fill" id="board-container"> 
 
-      <!-----------------------------------------------main boards area - BEGIN -->
-      <main class="col d-flex cardlist-container" id="main-board">
+      <!---------------------------------------- -------main boards area - BEGIN -->
+      <main class="col d-flex cardlist-container align-items-start" id="main-board">
 
         <div class="btn-add-cardlist-div ml-1 mr-2">
           <div id="add-cardlist-btn-div">
@@ -153,7 +129,32 @@
       </main>
       <!-------------------------------------------------main boards area - END -->
 
-  </div>
+   </div>
+
+    <!-- -----------------------------------------------------sidebar - BEGIN -->
+    <nav id="sidebar" class="float-right closed">
+      <div class="card sidebar-card rounded-0 keep-width">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+            <h2 class="d-inline-block position-relative" >Menu</h2>
+            <span id="close-menu" class="float-right position-absolute">
+                <i class="fas fa-times"></i>
+            </span>
+          </li>
+          <li class="list-group-item" id="change-colors"><span>Change background color</span></li>
+          <li class="list-group-item closed" id="swatches">
+            <div class="container">
+              <div id="color-container" class="row">
+
+              </div>
+            </div>
+          </li>
+          <li class="list-group-item"><span>Filter boards</span> </li>
+       </ul>
+      </div>
+    </nav>
+    <!----------------------------------------------------------sidebar - END -->
+</div>
 
 
 
@@ -194,6 +195,8 @@
     </div>
   </div>
   <!--end of create button onclick modal-->
+
+
 
 
   <!-- JS dependencies for Bootstrap 4 and reference to local JS file-->
